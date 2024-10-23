@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import React from 'react'
 import './App.css';
+import Navbar from './components/navbar';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/home';
+import Project from './pages/project';
+import ProjectDetails from './pages/projectDetails'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Footer from './components/footer';
+import Aboutpage from './pages/aboutpage';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+     <Navbar />
+        <div className='' > 
+          <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/project" element={<Project />} />
+          <Route path="/project/:id" element={<ProjectDetails />} />
+          <Route path="/about" element={<Aboutpage />} />
+          </Routes>
+        </div>
+        <Footer />
+      </Router>
+    
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

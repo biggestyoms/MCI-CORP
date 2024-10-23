@@ -1,38 +1,75 @@
-.App {
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url("https://use.typekit.net/det2kyf.css");
+
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  overflow: auto; /* Enable scrolling */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; 
+}
+body{
+background-color:black;
+color: white;
+font-family: 'Calibre', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html{
+  size: 100%;
+  font-family: 'Calibre', sans-serif;                              
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body::-webkit-scrollbar {
+  display: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.noScrollbar::-webkit-scrollbar {
+  display: none;
 }
 
-.App-link {
-  color: #61dafb;
+.projectImages{
+  background-position: center;
+  background-size: cover;
+  filter: grayscale(100%);
+  cursor: pointer;
+
+}
+.projectImages:hover{
+  filter: grayscale(0%);
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.home-bg-one{
+  background-position: center;
+  background-size: cover;
+  background-image: url('./images/projectImage1.jpg');
+  cursor: pointer;
 }
+
+.home-bg-two{
+  background-position: center;
+  background-size: cover;
+  background-image: url('./images/projectImage111111111.jpg');
+  cursor: pointer;
+}
+.home-bg-three{
+  background-position: center;
+  background-size: cover;
+  background-image: url('./images/projectImage1.jpg');
+  cursor: pointer;
+}
+.home-bg-four{
+  background-position: center;
+  background-size: cover;
+  background-image: url('./images/projectImage7.jpg');
+  cursor: pointer;
+}
+
