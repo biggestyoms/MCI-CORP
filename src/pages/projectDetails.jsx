@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import ProjectImageOne from "../images/projectImage1.jpg"
 import ProjectImageOne1 from "../images/project11.jpg"
@@ -155,96 +155,24 @@ Built in 2003, 27 Copernicus Blvd is a standout industrial complex featuring two
   
 ];
 
-
-//   const { id } = useParams();
-//   const project = projects.find((p) => p.id === parseInt(id));
-
-//   if (!project) {
-//     return <div>Project not found</div>;
-//   }
-
-//   return (
-//     <div className="w-full h-full flex items-center justify-center">
-//       <div className="flex flex-col items-center justify-center w-full h-full ">
-//         <div className="w-full h-[100dvh] bg-cover bg-no-repeat bg-center flex items-end justify-center" style={{ backgroundImage: project.bgImage }} >
-//           <p className="py-10 md:text-[55px] text-[30px] font-extrabold font-Dm">{project?.name}</p>
-//         </div>
-//         <div className="mt-[7%] gap-10 w-full flex md:flex-row flex-col items-start justify-center h-full">
-//           {/* Sidebar with sticky positioning */}
-//           <div className="flex flex-col items-start md:justify-start justify-center text-start lg:w-[18%] ml-[5%] gap-2  md:w-[25%] md:h-full h-[20dvh] md:sticky md: top-[20%]">
-//             <p className="text-[13px]">
-//               <span className="font-bold text-[17px]">Contractor: </span>MCI corp
-//             </p>
-//             <p className="text-[13px] ">
-//               <span className="font-bold text-[17px]">Status: </span>MCI corp
-//             </p>
-//             <p className="text-[13px]">
-//               <span className="font-bold text-[17px]">Contractor: </span>MCI corp
-//             </p>
-//           </div>
-
-//           {/* Main content area with vertical scrolling */}
-//           <div className="overflow-y-scroll md:w-[80%] h-full p-4 flex flex-col items-center justify-start gap-10">
-
-//             {
-//                 project?.image1 ? <div className="lg:w-full md:w-[95%] w-full md:h-[100dvh] h-[69dvh] flex items-center justify-center">
-//                 <img src={project?.image1} className="w-full h-full md:object-cover  " alt="" />
-//               </div> : <div></div>
-//             }
-
-//         {
-//           project?.image2 ?     <div className=" lg:w-full md:w-[95%] md:h-[100dvh] h-[65dvh] flex items-center justify-end">
-//           <div className="lg:w-[60%] md:w-[50%] w-[60%] bg-blue-400 h-full">
-//           <img src={project?.image2} className="w-full h-full object-cover object-left " alt="" />
-//           </div>
-//         </div> : <div></div>
-//         }
-
-//          {
-//           project?.image3 ?   <div className="lg:w-full md:w-[95%] w-full md:h-[100dvh] h-[69dvh] flex items-center justify-center">
-//           <img src={project?.image3} className="w-full h-full md:object-cover object-cover  " alt="" />
-//         </div> : <div></div>
-//          }
-
-
-// {
-//           project?.image4 ?    <div className="lg:w-full md:w-[95%] w-full md:h-[100dvh] h-[69dvh] flex items-center justify-center">
-//           <img src={project?.image4} className="w-full h-full md:object-cover object-right  " alt="" />
-//         </div> : <div></div>
-//          }
-
-
-
-// {
-//          project?.image5 ?      <div className=" lg:w-full md:w-[95%] md:h-[100dvh] h-[65dvh] flex items-center justify-end">
-//          <div className="lg:w-[60%] md:w-[50%] w-[60%] bg-blue-400 h-full">
-//          <img src={project?.image5} className="w-full h-full object-cover object-left " alt="" />
-//          </div>
-//        </div> : <div></div>
-//          }
-
-
-
-// {
-//           project?.image6 ?   <div className="lg:w-full md:w-[95%] w-full md:h-[100dvh] h-[69dvh] flex items-center justify-center">
-//           <img src={project?.image6} className="w-full h-full object-fill object-left  " alt="" />
-//         </div> : <div></div>
-//          }
-
-
-
-
-//   </div>
-// </div>
-
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ProjectDetails;
-
 const ProjectDetails = () => {
+  const bgRef = useRef(null);
+
+  // Parallax effect thing
+  useEffect(() => {
+    const handleScroll = () => {
+      if (bgRef.current) {
+        const scrollPosition = window.scrollY;
+        bgRef.current.style.transform = `translateY(${scrollPosition * 0.5}px)`; 
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   const { id } = useParams();
   const project = projects.find((p) => p.id === parseInt(id));
 
@@ -254,68 +182,78 @@ const ProjectDetails = () => {
 
   return (
     <div className="w-full h-full flex items-center justify-center">
-      <div className="flex flex-col items-center justify-center w-full h-full ">
-        <div className="w-full h-[100dvh] bg-cover bg-no-repeat bg-center flex items-end justify-center" style={{ backgroundImage: project.bgImage }} >
-          <p className="py-10 md:text-[55px] text-[30px] font-extrabold font-Dm">{project?.name}</p>
-        </div>
-        <div className="mt-[7%] gap-10 w-full flex md:flex-row flex-col items-start justify-center h-full">
-          {/* Sidebar with sticky positioning */}
-          {
-            project?.contractor && project?.status ? (
-              <div  className="flex flex-col items-start md:justify-start justify-center text-start lg:w-[18%] ml-[5%] gap-2  md:w-[25%] md:h-full h-[20dvh] md:sticky md:top-[40%]">
-                <p className="text-[13px]">
-                  <span className="font-bold text-[17px]">Contractor: </span>{project.contractor}
-                </p>
-                <p className="text-[13px]">
-                  <span className="font-bold text-[17px]">Status: </span>{project.status}
-                </p>
-                <p className="text-[13px]">
-                  <span className="font-bold text-[17px]">Info: </span>{project.details}
-                </p>
-              </div>
-            ) : null
-          }
+    <div className="flex flex-col items-center justify-center w-full h-full">
+      {/* Background with parallax effect */}
+      <div
+        ref={bgRef}
+        className="w-full h-[100dvh] bg-cover bg-no-repeat bg-center flex items-end justify-center"
+        style={{
+          backgroundImage: project.bgImage,
+          backgroundPosition: 'center', 
+        }}
+      >
+        <p className="py-10 md:text-[55px] text-[30px] font-extrabold font-Dm">{project?.name}</p>
+      </div>
 
-          {/* Main content area with vertical scrolling */}
-          <div className="overflow-y-scroll md:w-[80%] h-full p-4 flex flex-col items-center justify-start gap-10">
-            {project?.image1 && (
-              <div className="lg:w-full md:w-[95%] w-full md:h-[100dvh] h-[69dvh] flex items-center justify-center">
-                <img src={project.image1} className="w-full h-full object-cover" alt="" />
-              </div>
-            )}
-            {project?.image2 && (
-              <div className="lg:w-full md:w-[95%] md:h-[100dvh] h-[65dvh] flex items-center justify-end">
-                <div className="lg:w-[60%] md:w-[50%] w-[60%] bg-blue-400 h-full">
-                  <img src={project.image2} className="w-full h-full object-cover " alt="" />
-                </div>
-              </div>
-            )}
-            {project?.image3 && (
-              <div className="lg:w-full md:w-[95%] w-full md:h-[100dvh] h-[69dvh] flex items-center justify-center">
-                <img src={project.image3} className="w-full h-full object-cover" alt="" />
-              </div>
-            )}
-            {project?.image4 && (
-              <div className="lg:w-full md:w-[95%] w-full md:h-[100dvh] h-[69dvh] flex items-center justify-center">
-                <img src={project.image4} className="w-full h-full object-cover " alt="" />
-              </div>
-            )}
-            {project?.image5 && (
-              <div className="lg:w-full md:w-[95%] md:h-[100dvh] h-[65dvh] flex items-center justify-end">
-                <div className="lg:w-[60%] md:w-[50%] w-[60%] bg-blue-400 h-full">
-                  <img src={project.image5} className="w-full h-full object-cover " alt="" />
-                </div>
-              </div>
-            )}
-            {project?.image6 && (
-              <div className="lg:w-full md:w-[95%] w-full md:h-[100dvh] h-[69dvh] flex items-center justify-center">
-                <img src={project.image6} className="w-full h-full object-cover" alt="" />
-              </div>
-            )}
+      {/* Content that scrolls */}
+      <div className="mt-[7%] z-10 gap-10 w-full bg-[#191919] flex md:flex-row flex-col items-start justify-center md:h-[100dvh] md:overflow-y-auto md:sticky md:top-0">
+        
+        {/* Sidebar */}
+        {project?.contractor && project?.status ? (
+          <div className="flex flex-col items-start md:justify-start justify-center text-start lg:w-[18%] ml-[5%] gap-2 md:w-[25%] md:h-auto md:sticky md:top-32 pr-5">
+            <p className="text-[13px]">
+              <span className="font-bold text-[17px]">Contractor: </span>{project.contractor}
+            </p>
+            <p className="text-[13px]">
+              <span className="font-bold text-[17px]">Status: </span>{project.status}
+            </p>
+            <p className="text-[13px]">
+              <span className="font-bold text-[17px]">Info: </span>{project.details}
+            </p>
           </div>
+        ) : null}
+
+        {/* Main content area */}
+        <div className="md:w-[80%] p-4 flex flex-col items-center justify-start gap-10 md:pt-32">
+          {project?.image1 && (
+            <div className="lg:w-full md:w-[100%] w-full md:h-[100dvh] h-[69dvh] flex items-center justify-center">
+              <img src={project.image1} className="w-full h-full object-cover" alt="" />
+            </div>
+          )}
+          {project?.image2 && (
+            <div className="lg:w-full md:w-[95%] md:h-[100dvh] h-[65dvh] flex items-center justify-end">
+              <div className="lg:w-[60%] md:w-[50%] w-[60%] bg-blue-400 h-full">
+                <img src={project.image2} className="w-full h-full object-cover" alt="" />
+              </div>
+            </div>
+          )}
+          {/* Other images */}
+          {project?.image3 && (
+            <div className="lg:w-full md:w-[95%] w-full md:h-[100dvh] h-[69dvh] flex items-center justify-center">
+              <img src={project.image3} className="w-full h-full object-cover" alt="" />
+            </div>
+          )}
+          {project?.image4 && (
+            <div className="lg:w-full md:w-[95%] w-full md:h-[100dvh] h-[69dvh] flex items-center justify-center">
+              <img src={project.image4} className="w-full h-full object-cover" alt="" />
+            </div>
+          )}
+          {project?.image5 && (
+            <div className="lg:w-full md:w-[95%] md:h-[100dvh] h-[65dvh] flex items-center justify-end">
+              <div className="lg:w-[60%] md:w-[50%] w-[60%] bg-blue-400 h-full">
+                <img src={project.image5} className="w-full h-full object-cover" alt="" />
+              </div>
+            </div>
+          )}
+          {project?.image6 && (
+            <div className="lg:w-full md:w-[95%] w-full md:h-[100dvh] h-[69dvh] flex items-center justify-center">
+              <img src={project.image6} className="w-full h-full object-cover" alt="" />
+            </div>
+          )}
         </div>
       </div>
     </div>
+  </div>
   );
 };
 
