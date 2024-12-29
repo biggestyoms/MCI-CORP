@@ -30,7 +30,7 @@ const Navbar = () => {
       <div className="z-20 w-full h-[12vh] flex items-center fixed justify-center">
         <div className="w-[90%] h-[12vh] flex items-center justify-between">
           <Link to="/" className="md:w-[18%] w-[30%]">
-            <h1 className="md:text-[36px] text-[23px] font-normal leading-[29px]">
+            <h1 className="md:text-[36px] text-[23px] font-semibold leading-[29px]">
               MCI CORP
             </h1>
           </Link>
@@ -59,24 +59,24 @@ const Navbar = () => {
         } transition-all ease-[cubic-bezier(0.25, 0.1, 0.25, 1)] duration-[1500ms]`}
       >
         <div className="flex flex-col items-end justify-between w-full h-full">
-          <div className="flex flex-col text-end justify-center w-[60%] leading-tight pt-16 px-10 text-[#464646]">
+          <div className="flex flex-col text-end justify-center items-end w-[75%] leading-tight pt-24  px-10 text-[#464646]">
             <NavLink
               to="/"
-              className="font-bold md:text-[60px] text-[30px] hover:text-[#ffffff] transition duration-300"
+              className="font-bold md:text-[60px] text-[45px] hover:text-[#ffffff] transition duration-300"
               onClick={handleNavClick}
             >
               HOME
             </NavLink>
             <NavLink
               to="project"
-              className="font-bold md:text-[60px] text-[30px] hover:text-[#ffffff] transition duration-300"
+              className="font-bold md:text-[60px] text-[45px] hover:text-[#ffffff] transition duration-300"
               onClick={handleNavClick}
             >
               PROJECTS
             </NavLink>
             <NavLink
               to="about"
-              className="font-bold md:text-[60px] text-[30px] hover:text-[#ffffff] transition duration-300"
+              className="font-bold md:text-[60px] text-[45px] hover:text-[#ffffff] transition duration-300"
               onClick={handleNavClick}
             >
               ABOUT

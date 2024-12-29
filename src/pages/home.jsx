@@ -60,15 +60,15 @@ const Home = () => {
         className={`fixed z-50 top-0 left-0 w-full h-full bg-black flex items-center justify-center transition-transform duration-1000 delay-500 ${
           isMounted ? "-translate-y-full" : "translate-y-0"
         }`}
-      >8445
+      >
         <img src={Logo} className="md:w-[17%] w-[39%]" alt="" />
       </div>
 
-      <div className="w-full lg:h-[100dvh] md:h-[61dvh] h-[68dvh] flex items-end justify-end">
+      <div className="w-full lg:h-[100dvh] md:h-[61dvh] h-[65dvh] flex items-end justify-end">
         <img
           src={Image4}
           alt=""
-          className={`bject-cover ${
+          className={`object-cover ${
             menuOpen ? "w-[80%]" : "w-[100%]"
           } transition-all transition-ease duration-[1500ms] h-full`}
         />
@@ -76,12 +76,12 @@ const Home = () => {
 
       <div className="w-full flex flex-col items-center bg-[#0d0d0f]  lg:pt-24 md:pt-10 pt-20 ">
         <div className="w-full flex justify-center  items-center ">
-          <p className="lg:text-[55px] md:text-[42px] text-[25px] lg:w-[60%]  md:w-[85%] w-[94%] font-[900] leading-tight" data-aos="fade-out">
-            AT MCI AORP, IT'S NOT JUST ABOUT THE SPACES WE CREATE.
+          <p className="lg:text-[55px] md:text-[42px] text-[25px] lg:w-[60%]  md:w-[85%] w-[94%] font-[900] leading-tight" data-aos="fade-in">
+            AT MCI CORP, IT'S NOT JUST ABOUT THE SPACES WE CREATE.
           </p>
         </div>
 
-        <div className="w-full px-7 md:px-0 flex justify-center items-center  lg:h-[20dvh] md:h-[18dvh] h-[34dvh] lg:my-14 my-10" data-aos="fade-out">
+        <div className="w-full px-7 md:px-0 flex justify-center items-center  lg:h-[20dvh] md:h-[18dvh] h-[34dvh] lg:my-14 my-10" data-aos="fade-in">
           <p className="lg:text-[19px] md:text-[19px] text-[16px]  font-[300] lg:pl-[410px] md:pr-[100px] md:pl-[250px]">
             It's about the people who will call those spaces home whether
             they're employees, clients, or visitors. For over two decades, we’ve
@@ -98,7 +98,7 @@ const Home = () => {
           </p>
         </div>
 
-        <div className="w-full flex justify-center items-center lg:h-[50dvh] md:h-[35dvh] h-[58dvh] lg:my-14 md:my-5" data-aos="slide-right">
+        <div className="w-full flex justify-center items-center lg:h-[50dvh] md:h-[35dvh] h-[58dvh] lg:my-14 md:my-5" data-aos="fade-in">
           <p className="lg:text-[20px] md:text-[18px] text-[16px] lg:w-[60%] md:w-[70%] w-[90%] font-[300]">
             MCI Corp Proudly Based in Brantford Since 1995 Founded by Jang
             Panag, MCI Corp has been a cornerstone of Brantford’s business
@@ -117,7 +117,7 @@ const Home = () => {
           </p>
         </div>
 
-        <div className="w-full flex h-full md:justify-end justify-center items-center md:mb-14 mb-10 " data-aos="fade-out">
+        <div className="w-full flex h-full md:justify-end justify-center items-center md:mb-14 mb-10 " data-aos="fade-in">
           <div className="md:w-[50%] w-full relative md:h-[100dvh] h-[65dvh] home-bg-two">
             <p className="w-full h-[15dvh] flex items-center justify-end p-10 font-[200] absolute bottom-0">
               340 Henry
@@ -141,7 +141,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="flex lg:w-[65%] w-[90%] md:my-14 my-[19%] lg:h-[30dvh] justify-between items-center"  data-aos="slide-left">
+        <div className="flex lg:w-[65%] w-[90%] md:my-14 my-[19%] lg:h-[30dvh] justify-between items-center"  data-aos="fade-in">
           <p className="font-[900] lg:text-[50px] md:text-[35px] text-[20px] leading-tight">
             OUR <br /> PROJECTS
           </p>

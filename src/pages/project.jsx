@@ -11,6 +11,8 @@ import ProjectImageEight from "../images/projectImage8.jpg";
 import ProjectImageNine from "../images/projectImage9.jpg";
 import ProjectImageTen from "../images/projectImage10.jpg";
 import ProjectImageEleven from "../images/projectImage11.jpg";
+import ProjectImageTwelve from "../images/GolfOne.jpg";
+
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -26,6 +28,7 @@ const projects = [
   { id: 9, name: "17 EASTON", bgImage: `url(${ProjectImageNine})` },
   { id: 10, name: "36 EASTON", bgImage: `url(${ProjectImageTen})` },
   { id: 11, name: "47 Copernicus", bgImage: `url(${ProjectImageTwo})` },
+  { id: 12, name: "Golf Tournament", bgImage: `url(${ProjectImageTwelve})` },
 ];
 
 const Project = () => {
@@ -42,7 +45,7 @@ const Project = () => {
 
   // Separate projects by IDs
   const mainProjects = projects.filter((project) =>
-    [1, 2, 3].includes(project.id)
+    [1, 2, 3, 12].includes(project.id)
   );
   const otherProjects = projects.filter(
     (project) => ![1, 2, 3].includes(project.id)

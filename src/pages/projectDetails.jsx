@@ -33,6 +33,11 @@ import ProjectImageEleven3 from "../images/projectImage111111.jpg"
 import ProjectImageEleven4 from "../images/projectImage1111111.jpg"
 import ProjectImageEleven5 from "../images/projectImage11111111.jpg"
 import ProjectImageEleven6 from "../images/projectImage111111111.jpg"
+import ProjectImageTwelve from "../images/GolfOne.jpg";
+import ProjectImageTwelveOne from "../images/GolfTwo.jpg";
+import ProjectImageTwelveTwo from "../images/GolfThree.jpg";
+import ProjectImageTwelveThree from "../images/GolfFour.jpg";
+import ProjectImageTwelveFour from "../images/GolfFive.jpg";
 
 
 
@@ -151,6 +156,17 @@ Built in 2003, 27 Copernicus Blvd is a standout industrial complex featuring two
     image2: ProjectImageTwo2,  
     image3: ProjectImageTwo2, 
     details: "This is the detail of 47 Copernicus.", 
+  },
+  { 
+    id: 12, 
+    name: "Golf Tournament", 
+    bgImage: `url(${ProjectImageTwelveTwo})`, 
+    image1: ProjectImageTwelveOne,  
+    image2: ProjectImageTwelveThree,  
+    image3: ProjectImageTwelveFour,
+    image4: ProjectImageTwelveTwo,
+    image5: ProjectImageTwelve,
+    details: "This is the detail of Golf Club Tournament.", 
   }
   
 ];
@@ -217,7 +233,7 @@ const ProjectDetails = () => {
         <div className="md:w-[80%] p-4 flex flex-col items-center justify-start gap-10 md:pt-32">
           {project?.image1 && (
             <div className="lg:w-full md:w-[100%] w-full md:h-[100dvh] h-[69dvh] flex items-center justify-center">
-              <img src={project.image1} className="w-full h-full object-cover" alt="" />
+              <img src={project.image1} className="w-full h-full object-cover " alt="" />
             </div>
           )}
           {project?.image2 && (
@@ -230,17 +246,17 @@ const ProjectDetails = () => {
           {/* Other images */}
           {project?.image3 && (
             <div className="lg:w-full md:w-[95%] w-full md:h-[100dvh] h-[69dvh] flex items-center justify-center">
-              <img src={project.image3} className="w-full h-full object-cover" alt="" />
+              <img src={project.image3} className="w-full h-full object-cover object-left md:object-center  " alt="" />
             </div>
           )}
           {project?.image4 && (
             <div className="lg:w-full md:w-[95%] w-full md:h-[100dvh] h-[69dvh] flex items-center justify-center">
-              <img src={project.image4} className="w-full h-full object-cover" alt="" />
+              <img src={project.image4} className="w-full h-full object-cover " alt="" />
             </div>
           )}
           {project?.image5 && (
             <div className="lg:w-full md:w-[95%] md:h-[100dvh] h-[65dvh] flex items-center justify-end">
-              <div className="lg:w-[60%] md:w-[50%] w-[60%] bg-blue-400 h-full">
+              <div className="lg:w-[60%] md:w-[50%] w-[80%] bg-blue-400 h-full">
                 <img src={project.image5} className="w-full h-full object-cover" alt="" />
               </div>
             </div>
