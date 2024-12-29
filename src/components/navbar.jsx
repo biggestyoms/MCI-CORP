@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Spiral as Hamburger } from "hamburger-react";
 import { Link, NavLink } from "react-router-dom";
 import { useMenu } from "../menuContext";
@@ -48,7 +48,7 @@ const Navbar = () => {
       <div
         className={`fixed top-0 left-0 w-full h-full bg-black opacity-0 ${
           menuOpen ? "opacity-50" : "pointer-events-none"
-        } transition-opacity duration-500 z-10`}
+        } transition-opacity duration-100 z-10`}
         onClick={handleNavClick}
       />
 

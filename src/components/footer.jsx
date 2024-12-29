@@ -31,7 +31,7 @@ const Footer = () => {
 
     <div className='md:w-[20%] w-[27%] b items-center flex justify-center'>
         <p className='font-[200] text-[13px]'>
-            <a href="#" className="block">INSTAGRAM</a>
+            <a href="www.instagram.com" className="block">INSTAGRAM</a>
         </p>
     </div>
 </div>

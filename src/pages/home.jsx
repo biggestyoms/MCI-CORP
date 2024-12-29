@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import Video from "../images/homeVideo.MP4";
 import { MdWindow } from "react-icons/md";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
@@ -61,7 +60,7 @@ const Home = () => {
           isMounted ? "-translate-y-full" : "translate-y-0"
         }`}
       >
-        <img src={Logo} className="md:w-[17%] w-[39%]" alt="" />
+        <img src={Logo} className="md:w-[17%] w-[39%]" alt="logo" />
       </div>
 
       <div className="w-full lg:h-[100dvh] md:h-[61dvh] h-[65dvh] flex items-end justify-end">

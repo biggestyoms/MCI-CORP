@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import ProjectImageOne from "../images/projectImage1.jpg"
 import ProjectImageOne1 from "../images/project11.jpg"
